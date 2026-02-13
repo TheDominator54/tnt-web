@@ -9,9 +9,9 @@ Headline: Build strength. Lose fat. Live with purpose.
 Personal training and structured programs for adults who want real results, without the chaos of big box gyms
 Button- Schedule free strategy session
 Section 1- Who we help
-At TNT Fitness, we work with adults who are ready to lose stubborn body fat, build lean muscle, increase strength and confidence, and develop discipline that carries into everyday life. Whether you’re starting fresh or getting serious again, we provide clear structure, accountability, and coaching that meets you where you are.
+At TNT Fitness, we work with adults who are ready to lose stubborn body fat, build lean muscle, increase strength and confidence, and develop discipline that carries into everyday life. Whether you're starting fresh or getting serious again, we provide clear structure, accountability, and coaching that meets you where you are.
 Section 2- Our approach
-We believe that fitness should be structured, encouraging, challenging, and rooted in integrity. Our coaching focuses on long-term progress, not just quick fixes. You’ll receive personalized programming, habit accountability, nutrition guidance, and professional support every step of the way. We don’t just help you change your body. We help you build consistency.
+We believe that fitness should be structured, encouraging, challenging, and rooted in integrity. Our coaching focuses on long-term progress, not just quick fixes. You'll receive personalized programming, habit accountability, nutrition guidance, and professional support every step of the way. We don't just help you change your body. We help you build consistency.
 Section 3- Our Model
 We offer open gym memberships at an accessible rate, giving you a solid training environment without the inflated costs of big franchises. For those who want more structure, accountability, and faster results, we offer premium coaching options designed specifically around your goals. You choose your level of commitment, we provide the structure to help you succeed.
 Section 4- Results
@@ -27,11 +27,11 @@ Training
 Personal training
 1 on 1 coaching designed specifically for your body, schedule, and goals. Best for: fat loss, muscle gain, accountability, and injury aware programming.
 Group training classes are structured sessions with professional oversight and community support. Best for: staying motivated, lower cost option, consistency.
-Nutrition & Accountability. Training without direction outside the gym doesn’t work. We help you set calorie targets, track protein, build simple sustainable habits, and stay consistent long term.
+Nutrition & Accountability. Training without direction outside the gym doesn't work. We help you set calorie targets, track protein, build simple sustainable habits, and stay consistent long term.
 
 About (Owner)
-I’m Eli, the owner of TNT Fitness. Before opening TNT, I worked as a firefighter EMT. That experience shaped how I approach life and leadership, discipline matters, preparation matters, and showing up for people matters. When I transitioned into business ownership and full time coaching, I carried those same principles with me.
-I started TNT because I believe training should be more than just showing up and sweating. It should be structured. It should be intentional. And it should help you grow, both physically and mentally. Over the years, I’ve seen how powerful consistent training could be. It builds confidence. It builds discipline. It carries over into every other area of life. At TNT, my goal is simple: to help adults lose fat, build muscle, and develop habits they can sustain long term. Whether you’re just getting started or ready to take your coaching seriously, you’ll have a clear plan, accountability, and honest coaching from someone who genuinely cares about your progress. This isn’t a big box gym. This is a place where you’re known, encouraged, and challenged to improve. I believe growth happens when structure meets consistency and when people feel supported rather than judged. Growth doesn’t happen by accident, it happens by design.
+I'm Eli, the owner of TNT Fitness. Before opening TNT, I worked as a firefighter EMT. That experience shaped how I approach life and leadership, discipline matters, preparation matters, and showing up for people matters. When I transitioned into business ownership and full time coaching, I carried those same principles with me.
+I started TNT because I believe training should be more than just showing up and sweating. It should be structured. It should be intentional. And it should help you grow, both physically and mentally. Over the years, I've seen how powerful consistent training could be. It builds confidence. It builds discipline. It carries over into every other area of life. At TNT, my goal is simple: to help adults lose fat, build muscle, and develop habits they can sustain long term. Whether you're just getting started or ready to take your coaching seriously, you'll have a clear plan, accountability, and honest coaching from someone who genuinely cares about your progress. This isn't a big box gym. This is a place where you're known, encouraged, and challenged to improve. I believe growth happens when structure meets consistency and when people feel supported rather than judged. Growth doesn't happen by accident, it happens by design.
 
 Testimonials
 Charlene?
@@ -65,7 +65,7 @@ Colors: Orange/Blue/White
 
 
 
-Theme: Performance-focused, clean, simple, bold, no soft “corporate gym” vibe
+Theme: Performance-focused, clean, simple, bold, no soft "corporate gym" vibe
 
 
 Fonts
@@ -89,7 +89,7 @@ One strong professional headshot
 
 PushPress (tour signup)
 - In index.html, set the body attribute: data-pushpress-signup-url="YOUR_URL"
-- Get the URL from PushPress: Control Panel → Settings → Leads (lead capture link), or use the “View Page” URL for your free strategy session / tour plan.
+- Get the URL from PushPress: Control Panel → Settings → Leads (lead capture link), or use the "View Page" URL for your free strategy session / tour plan.
 - Example: https://yoursubdomain.pushpress.com/open/interested
-- When set, all “Schedule free strategy session” and “Book your free session” buttons open that link in a new tab. When empty, buttons fall back to scrolling to the schedule section or calling 937-710-4326.
+- When set, all "Schedule free strategy session" and "Book your free session" buttons open that link in a new tab. When empty, buttons fall back to scrolling to the schedule section or calling 937-710-4326.
 

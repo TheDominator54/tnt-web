@@ -1,6 +1,6 @@
 # TNT Fitness — Next steps
 
-Use this list to track what’s left to do. Each item has a **Location** (where in the project to do it) and space for **Your directions / notes**.
+Use this list to track what's left to do. Each item has a **Location** (where in the project to do it) and space for **Your directions / notes**.
 
 ---
 
@@ -40,7 +40,7 @@ Use this list to track what’s left to do. Each item has a **Location** (where 
 
 ## 4. Add photo: exterior gym shot
 
-- **Location:** Project folder (e.g. `images/exterior.jpg`) and the spot in `index.html` or `styles.css` where you want it (e.g. hero background or a new “Visit us” block).
+- **Location:** Project folder (e.g. `images/exterior.jpg`) and the spot in `index.html` or `styles.css` where you want it (e.g. hero background or a new "Visit us" block).
 
 - **Your directions / notes:**
 
