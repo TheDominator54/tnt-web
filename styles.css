@@ -668,10 +668,12 @@ section[id] {
     bottom: 0;
     background: var(--white);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-xl);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .nav.is-open a { font-size: 1.25rem; }
   .nav.is-open .nav-cta-mobile {
