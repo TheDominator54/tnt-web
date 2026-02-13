@@ -16,3 +16,6 @@ Thumbs.db
 
 # Dependencies (if you add them later)
 node_modules/
+
+# Notes / project docs (optional – remove to track)
+notes/

@@ -662,18 +662,25 @@ section[id] {
   .nav.is-open {
     display: flex;
     position: fixed;
+    z-index: 99;
     top: var(--header-h);
     left: 0;
     right: 0;
     bottom: 0;
+    height: calc(100vh - var(--header-h));
+    max-height: calc(100vh - var(--header-h));
+    min-height: 0;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: var(--space-md);
     padding: var(--space-xl);
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
   }
   .nav.is-open a { font-size: 1.25rem; }
   .nav.is-open .nav-cta-mobile {
