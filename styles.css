@@ -558,6 +558,11 @@ section[id] {
   font-weight: 500;
 }
 .contact-card a:hover { text-decoration: underline; }
+.contact-address-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0 0 var(--space-sm);
+}
 .contact-address { margin: 0; line-height: 1.5; }
 .contact-address a {
   color: var(--blue);
