@@ -5,7 +5,6 @@
   const blocks = document.querySelectorAll('.block');
   const scrollHint = document.querySelector('[data-scroll-hint]');
 
-  // PushPress signup: if URL is set on <body data-pushpress-signup-url="...">, all .signup-cta links go there (new tab)
   const pushPressUrl = (document.body.getAttribute('data-pushpress-signup-url') || '').trim();
   if (pushPressUrl) {
     document.querySelectorAll('.signup-cta').forEach((el) => {
@@ -23,7 +22,6 @@
   let lastScrollY = window.scrollY;
   const scrollThreshold = 80;
 
-  // Header: hide on scroll down, show on scroll up
   function onScroll() {
     const y = window.scrollY;
     if (y > scrollThreshold) {
@@ -35,15 +33,14 @@
     }
     lastScrollY = y;
 
-    // Hide scroll hint after scrolling
     if (scrollHint && y > 100) scrollHint.style.opacity = '0';
     else if (scrollHint && y <= 100) scrollHint.style.opacity = '';
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Intersection Observer: reveal blocks and [data-section] children
-  const observer = new IntersectionObserver(
+  // Intersection Observer: reveal blocks
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -55,7 +52,29 @@
     { rootMargin: '-8% 0px -8% 0px', threshold: 0 }
   );
 
-  blocks.forEach((block) => observer.observe(block));
+  blocks.forEach((block) => revealObserver.observe(block));
+
+  // Active nav: highlight the link matching the section currently in view
+  const navLinks = nav ? Array.from(nav.querySelectorAll('a[href^="#"]')).filter((a) => !a.classList.contains('nav-cta-mobile')) : [];
+  const sections = navLinks.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+  if (sections.length) {
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute('id');
+          const link = navLinks.find((a) => a.getAttribute('href') === '#' + id);
+          if (!link) return;
+          if (entry.isIntersecting) {
+            navLinks.forEach((a) => a.classList.remove('is-active'));
+            link.classList.add('is-active');
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+    );
+    sections.forEach((s) => navObserver.observe(s));
+  }
 
   // Mobile nav toggle
   if (navToggle && nav) {
@@ -74,7 +93,6 @@
     });
   }
 
-  // Close nav on escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav && nav.classList.contains('is-open')) {
       nav.classList.remove('is-open');
@@ -82,4 +100,47 @@
       document.body.style.overflow = '';
     }
   });
+
+  // Back-to-top button
+  const backBtn = document.querySelector('[data-back-to-top]');
+  if (backBtn) {
+    const showAfter = window.innerHeight * 0.8;
+    function toggleBackBtn() {
+      backBtn.classList.toggle('is-visible', window.scrollY > showAfter);
+    }
+    window.addEventListener('scroll', toggleBackBtn, { passive: true });
+    toggleBackBtn();
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Gallery lightbox
+  const lightbox = document.querySelector('[data-lightbox]');
+  if (lightbox) {
+    const lbImg = lightbox.querySelector('.lightbox-img');
+    const lbClose = lightbox.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-grid img').forEach((img) => {
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) closeLightbox();
+    });
+  }
 })();
