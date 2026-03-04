@@ -56,9 +56,10 @@ html {
   .block [data-section],
   .results-list li,
   .training-card,
-  .testimonial,
-  .contact-card,
-  .scroll-line { animation: none !important; transition: none !important; }
+    .what-we-do-card,
+    .testimonial,
+    .contact-card,
+    .scroll-line { animation: none !important; transition: none !important; }
   .hero-headline .line,
   .hero-sub,
   .hero .btn-primary,
@@ -66,10 +67,12 @@ html {
   .block [data-section],
   .results-list li,
   .training-card,
-  .testimonial,
-  .contact-card { opacity: 1; transform: none; }
+    .what-we-do-card,
+    .testimonial,
+    .contact-card { opacity: 1; transform: none; }
   .block.is-visible .results-list li,
   .block.is-visible .training-card,
+  .block.is-visible .what-we-do-card,
   .block.is-visible .testimonial,
   .block.is-visible .contact-card { opacity: 1; transform: none; }
 }
@@ -420,6 +423,34 @@ section[id] {
 }
 .block--dark .block-lead { color: var(--gray-light); }
 
+/* What We Do cards */
+.what-we-do-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+.what-we-do-card {
+  padding: var(--space-lg);
+  border-left: 3px solid var(--blue);
+  background: var(--white);
+  border-radius: var(--radius);
+}
+.what-we-do-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--blue);
+  margin: 0 0 var(--space-sm);
+}
+.what-we-do-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--black);
+}
+
 /* Results */
 .results-intro {
   font-family: var(--font-display);
@@ -614,11 +645,11 @@ section[id] {
   margin: 0;
 }
 
-/* FAQ */
+/* FAQ accordion */
 .faq-block .section-head { margin-bottom: var(--space-lg); }
 .faq-list { margin: 0; }
 .faq-item {
-  padding: var(--space-md) 0;
+  padding: 0;
   border-bottom: 1px solid var(--gray-light);
 }
 .faq-item:last-child { border-bottom: none; }
@@ -627,12 +658,58 @@ section[id] {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--black);
-  margin: 0 0 var(--space-xs);
+  margin: 0;
+  padding: var(--space-md) 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  user-select: none;
+}
+.faq-question:hover { color: var(--blue); }
+.faq-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.faq-icon::before,
+.faq-icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  transition: transform 0.3s ease;
+}
+.faq-icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.faq-icon::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+.faq-item.is-open .faq-icon::after {
+  transform: translateX(-50%) rotate(90deg);
 }
 .faq-answer {
   margin: 0;
   line-height: 1.65;
   color: var(--black);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 0;
+}
+.faq-item.is-open .faq-answer {
+  max-height: 300px;
+  padding: 0 0 var(--space-md);
 }
 
 /* Footer */
@@ -739,6 +816,29 @@ section[id] {
   transition: background var(--transition);
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.lightbox-prev { left: var(--space-md); }
+.lightbox-next { right: var(--space-md); }
+.lightbox-prev:hover,
+.lightbox-next:hover { background: rgba(255,255,255,0.3); }
 
 /* Photo dividers between sections */
 .photo-divider {
@@ -811,6 +911,7 @@ section[id] {
 /* Stagger children in blocks */
 .results-list li,
 .training-card,
+.what-we-do-card,
 .testimonial,
 .contact-card {
   opacity: 0;
@@ -819,11 +920,14 @@ section[id] {
 }
 .block.is-visible .results-list li,
 .block.is-visible .training-card,
+.block.is-visible .what-we-do-card,
 .block.is-visible .testimonial,
 .block.is-visible .contact-card {
   opacity: 1;
   transform: translateY(0);
 }
+.block.is-visible .what-we-do-card:nth-child(2) { transition-delay: 0.1s; }
+.block.is-visible .what-we-do-card:nth-child(3) { transition-delay: 0.2s; }
 .block.is-visible .results-list li:nth-child(1) { transition-delay: 0.1s; }
 .block.is-visible .results-list li:nth-child(2) { transition-delay: 0.18s; }
 .block.is-visible .results-list li:nth-child(3) { transition-delay: 0.26s; }

@@ -8,8 +8,9 @@
   <meta property="og:title" content="TNT Fitness — Build strength. Lose fat. Live with purpose." />
   <meta property="og:description" content="Personal training and structured programs for adults who want real results. Sidney, OH." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo_small.jpg" />
+  <meta property="og:image" content="https://tntfitness.club/logo_small.jpg" />
   <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preload" as="image" href="images/TNT-9.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,6 +46,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Google Analytics: replace GA_MEASUREMENT_ID with your actual ID from https://analytics.google.com -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  -->
 </head>
 <body data-pushpress-signup-url="https://oab9gel.pushpress.com/open/interested">
   <!-- PushPress lead capture: staff will reach out to schedule strategy session -->
@@ -111,8 +122,6 @@
         <p class="block-lead" data-section>Start with open gym access at a fair rate—no franchise markup, just a serious place to train. Want more direction and faster results? Add coaching built around your goals. You pick your level; we give you the structure and support to get there.</p>
       </div>
     </section>
-
-    <div class="photo-divider"><img src="images/TNT-18.jpg" alt="TNT Fitness machines and equipment" loading="lazy" /></div>
 
     <section id="results" class="block block--dark results-block" data-section>
       <div class="container">
@@ -195,28 +204,28 @@
       <div class="container container--narrow">
         <h2 class="section-head section-head--blue" data-section>Common questions</h2>
         <dl class="faq-list">
-          <div class="faq-item">
-            <dt class="faq-question">What is TNT Fitness?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>What is TNT Fitness?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">A results-focused gym in Sidney for adults who want structure, not guesswork. We do structured programming, real coaching, and accountability—so you get stronger, leaner, and more confident. No fluff. No gimmicks. Just a clear plan and support that actually works.</dd>
           </div>
-          <div class="faq-item">
-            <dt class="faq-question">Who runs TNT Fitness?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>Who runs TNT Fitness?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">Eli Wilson owns and runs TNT. He's a full-time coach who works directly with members on strength, fat loss, and habits. He believes training is one of the best tools for building confidence and consistency—so you look better, move better, and show up better in the rest of your life.</dd>
           </div>
-          <div class="faq-item">
-            <dt class="faq-question">What happens at a free strategy session?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>What happens at a free strategy session?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">You'll sit down with a coach, talk about your goals and where you are right now, go through a body composition scan, and leave with a clear next step—whether that's joining or not. No hard sell, no pressure.</dd>
           </div>
-          <div class="faq-item">
-            <dt class="faq-question">Do I need to be in shape to start?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>Do I need to be in shape to start?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">No. Most of our members started from scratch or after a long break. Every program is built around where you are right now—your fitness level, schedule, and goals. You don't need to "get ready" before showing up.</dd>
           </div>
-          <div class="faq-item">
-            <dt class="faq-question">What are the membership options?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>What are the membership options?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">We offer open gym access at a straightforward monthly rate—no long-term contracts or hidden fees. If you want more structure, you can add personal training or group coaching on top. Your strategy session is the best way to find the right fit.</dd>
           </div>
-          <div class="faq-item">
-            <dt class="faq-question">Can I use the gym outside of staffed hours?</dt>
+          <div class="faq-item" data-faq>
+            <dt class="faq-question" data-faq-toggle>Can I use the gym outside of staffed hours?<span class="faq-icon" aria-hidden="true"></span></dt>
             <dd class="faq-answer">Yes. All members get 24/7 key-card access, so you can train on your own schedule. Staffed hours are when coaches are on-site for questions, programming help, and scheduled sessions.</dd>
           </div>
         </dl>
@@ -267,7 +276,7 @@
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p class="footer-copy">&copy; TNT Fitness. All rights reserved.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> TNT Fitness. All rights reserved.</p>
     </div>
   </footer>
 
@@ -275,7 +284,9 @@
 
   <div class="lightbox" data-lightbox>
     <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&#8249;</button>
     <img class="lightbox-img" src="" alt="" />
+    <button class="lightbox-next" aria-label="Next image">&#8250;</button>
   </div>
 
   <script src="script.js"></script>
