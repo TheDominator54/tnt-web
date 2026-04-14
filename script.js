@@ -142,7 +142,7 @@
 
     function showImage(index) {
       currentIndex = (index + galleryImages.length) % galleryImages.length;
-      lbImg.src = galleryImages[currentIndex].src;
+      lbImg.src = galleryImages[currentIndex].currentSrc || galleryImages[currentIndex].src;
       lbImg.alt = galleryImages[currentIndex].alt;
     }
 
